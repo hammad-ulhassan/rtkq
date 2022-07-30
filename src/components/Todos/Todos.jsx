@@ -14,7 +14,7 @@ function Todos(props) {
       {/* <ControlButtons /> */}
 
       <h2 id="list-heading"> tasks remaining</h2>
-      {(isError || !data) ? <h1>Error</h1> : <TodoList todos={todos} />}
+      {(isError) ? <h1>Error</h1> : <TodoList todos={todos} />}
     </div>
   );
 }
