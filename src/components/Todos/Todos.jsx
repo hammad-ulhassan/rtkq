@@ -5,7 +5,7 @@ import TodoList from "../TodoList/TodoList";
 import { useGetTodosQuery } from "../../api/apiSlice";
 
 function Todos(props) {
-  const { data, isLoading, isSuccess, isError, error } = useGetTodosQuery();
+  const { data: todos, isLoading, isSuccess, isError, error } = useGetTodosQuery();
 
   return (
     <div className="todoapp stack-large">
@@ -14,7 +14,7 @@ function Todos(props) {
       {/* <ControlButtons /> */}
 
       <h2 id="list-heading"> tasks remaining</h2>
-      {(isError || !data) ? <h1>Error {JSON.stringify(data)}</h1> : <TodoList todos={data} />}
+      {(isError || !data) ? <h1>Error</h1> : <TodoList todos={todos} />}
     </div>
   );
 }
